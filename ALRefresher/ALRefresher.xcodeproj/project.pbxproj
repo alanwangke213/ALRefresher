@@ -13,6 +13,7 @@
 		8C5A20911C25488600F61B6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A208F1C25488600F61B6F /* Main.storyboard */; };
 		8C5A20931C25488600F61B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A20921C25488600F61B6F /* Assets.xcassets */; };
 		8C5A20961C25488600F61B6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A20941C25488600F61B6F /* LaunchScreen.storyboard */; };
+		8C5A209E1C254C2800F61B6F /* ALRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A209D1C254C2800F61B6F /* ALRefresher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8C5A20921C25488600F61B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C5A20951C25488600F61B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C5A20971C25488600F61B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C5A209D1C254C2800F61B6F /* ALRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRefresher.swift; sourceTree = "<group>"; };
 		F8A346BBA3FD393C2BDC2813 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			children = (
 				8C5A208B1C25488600F61B6F /* AppDelegate.swift */,
 				8C5A208D1C25488600F61B6F /* ViewController.swift */,
+				8C5A209D1C254C2800F61B6F /* ALRefresher.swift */,
 				8C5A208F1C25488600F61B6F /* Main.storyboard */,
 				8C5A20921C25488600F61B6F /* Assets.xcassets */,
 				8C5A20941C25488600F61B6F /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			files = (
 				8C5A208E1C25488600F61B6F /* ViewController.swift in Sources */,
 				8C5A208C1C25488600F61B6F /* AppDelegate.swift in Sources */,
+				8C5A209E1C254C2800F61B6F /* ALRefresher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
