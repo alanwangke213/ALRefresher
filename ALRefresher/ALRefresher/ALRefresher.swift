@@ -20,13 +20,21 @@ class ALRefresher: UIView {
 	// 最小宽高
 	private var squareOriginWH: CGFloat = 0.5
 	// squareArray
-	private var squareArray: [UIView]?
+	 var squareArray: [UIView]?
 	// squareList
 	private var squareList: [[UIView]]?
 	// currentGroup
 	private var currentGroup: Int = 0
 	// toValue
 	private var toValue: NSValue?
+	// square的背景颜色
+	var squareColor: UIColor = UIColor.blackColor(){
+		didSet{
+			for square in squareArray!{
+				square.backgroundColor = squareColor
+			}
+		}
+	}
 	// 动画执行时间
 	var duration: NSTimeInterval = 0.6
 	// wheather the animation is animating
@@ -67,16 +75,19 @@ class ALRefresher: UIView {
 	
 	//获取refresher
 	private func initiateRefresherView(){
+		self.squareArray = nil
+		currentGroup = 0
+		amplify = true
 		var squareArray = [UIView]()
 		for i in 0..<9 {
 			let rowIndex = i / 3
 			let colIndex = i % 3
 			let squareX = CGFloat(colIndex) * squareDestWH
 			let squareY = CGFloat(rowIndex) * squareDestWH
-			let squareView = UIView(frame: CGRectMake(squareX, squareY, squareOriginWH, squareOriginWH))
-
+			let squareView = UIView(frame: CGRectMake(squareX + squareDestWH * 0.5, squareY + squareDestWH * 0.5, squareOriginWH, squareOriginWH))
+			print(squareView.frame)
 			squareView.tag = i
-			squareView.backgroundColor = UIColor.lightGrayColor()
+			squareView.backgroundColor = squareColor
 			self.addSubview(squareView)
 			squareArray.append(squareView)
 		}
@@ -133,8 +144,12 @@ class ALRefresher: UIView {
 	}
 	
 	//取消
-	private func resetRefresher(){
+	func resetRefresher(){
 		//		!!!未实现
+		for view in self.subviews {
+			view.removeFromSuperview()
+		}
+		initiateRefresherView()
 	}
 
 	//更新toValue

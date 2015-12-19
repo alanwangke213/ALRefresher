@@ -11,31 +11,38 @@ import UIKit
 
 class ViewController: UIViewController {
 	
-	var refresher: ALRefresher?
+	@IBOutlet weak var startBtn: UIButton!
+	@IBOutlet weak var stopBtn: UIButton!
+	@IBOutlet weak var cancelBtn: UIButton!
+	var grayRefresher: ALRefresher?
 		//MARK: - ------------------
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//按钮
-		let btn = UIButton(frame: CGRect(x: 150, y: 500, width: 60, height: 30))
-		btn.setTitle("show", forState: .Normal)
-		btn.layer.cornerRadius = 5
-		btn.layer.masksToBounds = true
-		btn.backgroundColor = UIColor.redColor()
-		btn.addTarget(self, action: "show", forControlEvents: .TouchUpInside)
-		view.addSubview(btn)
 		
 		//增加一组
 		//只需要设置refresher的frame就行，根据宽度和高度来计算小方块的宽高
-		let refresher = ALRefresher(frame: CGRect(x: 100, y: 200, width: 100, height: 80))
-		self.refresher = refresher
-		refresher.duration = 0.4
-		refresher.timeRatio = 0.4
-		view.addSubview(refresher)
+		let grayRefresher = ALRefresher(frame: CGRect(x: 100, y: 200, width: 150, height: 150))
+		grayRefresher.backgroundColor = UIColor.blackColor()
+		grayRefresher.squareColor = UIColor.lightGrayColor()
+		//修改动画时间
+		grayRefresher.duration = 0.4
+		self.grayRefresher = grayRefresher
+		view.addSubview(grayRefresher)
 	}
 	
-	func show(){
-		refresher!.isAnimating ? refresher?.stop() : refresher?.start()
+	@IBAction func didClickStartBtn() {
+		grayRefresher?.start()
 	}
+
+	@IBAction func didClickStopBtn() {
+		grayRefresher?.stop()
+	}
+	
+	@IBAction func didClickCancelBtn() {
+		grayRefresher?.cancel()
+	}
+
+	
 	override func viewWillDisappear(animated: Bool) {
 		super.viewWillDisappear(animated)
 	}
