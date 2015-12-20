@@ -14,6 +14,8 @@
 		8C5A20931C25488600F61B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A20921C25488600F61B6F /* Assets.xcassets */; };
 		8C5A20961C25488600F61B6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C5A20941C25488600F61B6F /* LaunchScreen.storyboard */; };
 		8C5A209E1C254C2800F61B6F /* ALRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A209D1C254C2800F61B6F /* ALRefresher.swift */; };
+		8C5A20A01C25BAD400F61B6F /* ALRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A209F1C25BAD400F61B6F /* ALRefreshControl.swift */; };
+		8C5A20A21C25BD2400F61B6F /* ALRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A20A11C25BD2400F61B6F /* ALRefreshViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		8C5A20951C25488600F61B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C5A20971C25488600F61B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C5A209D1C254C2800F61B6F /* ALRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRefresher.swift; sourceTree = "<group>"; };
+		8C5A209F1C25BAD400F61B6F /* ALRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRefreshControl.swift; sourceTree = "<group>"; };
+		8C5A20A11C25BD2400F61B6F /* ALRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALRefreshViewController.swift; sourceTree = "<group>"; };
 		F8A346BBA3FD393C2BDC2813 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,15 +75,33 @@
 		8C5A208A1C25488600F61B6F /* ALRefresher */ = {
 			isa = PBXGroup;
 			children = (
+				8C5A20A41C25BD3B00F61B6F /* View */,
+				8C5A20A31C25BD2F00F61B6F /* Controller */,
 				8C5A208B1C25488600F61B6F /* AppDelegate.swift */,
-				8C5A208D1C25488600F61B6F /* ViewController.swift */,
-				8C5A209D1C254C2800F61B6F /* ALRefresher.swift */,
 				8C5A208F1C25488600F61B6F /* Main.storyboard */,
 				8C5A20921C25488600F61B6F /* Assets.xcassets */,
 				8C5A20941C25488600F61B6F /* LaunchScreen.storyboard */,
 				8C5A20971C25488600F61B6F /* Info.plist */,
 			);
 			path = ALRefresher;
+			sourceTree = "<group>";
+		};
+		8C5A20A31C25BD2F00F61B6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C5A208D1C25488600F61B6F /* ViewController.swift */,
+				8C5A20A11C25BD2400F61B6F /* ALRefreshViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8C5A20A41C25BD3B00F61B6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C5A209D1C254C2800F61B6F /* ALRefresher.swift */,
+				8C5A209F1C25BAD400F61B6F /* ALRefreshControl.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A61896FCB3C4CDF330B04F5D /* Pods */ = {
@@ -216,6 +238,8 @@
 			files = (
 				8C5A208E1C25488600F61B6F /* ViewController.swift in Sources */,
 				8C5A208C1C25488600F61B6F /* AppDelegate.swift in Sources */,
+				8C5A20A01C25BAD400F61B6F /* ALRefreshControl.swift in Sources */,
+				8C5A20A21C25BD2400F61B6F /* ALRefreshViewController.swift in Sources */,
 				8C5A209E1C254C2800F61B6F /* ALRefresher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,10 +352,9 @@
 			baseConfigurationReference = 363F9FBF95573416624DAEC2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = ALRefresher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.AL.ALRefresher;
+				PRODUCT_BUNDLE_IDENTIFIER = per.ALan.AlanTomCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -341,10 +364,9 @@
 			baseConfigurationReference = 4AC5BD23027FF25703F9F3B6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = ALRefresher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cn.AL.ALRefresher;
+				PRODUCT_BUNDLE_IDENTIFIER = per.ALan.AlanTomCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

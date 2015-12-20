@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1DF-3e-TNX">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="s9P-78-yUp">
+            <objects>
+                <navigationController id="1DF-3e-TNX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="359-fc-RRb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wYs-DX-AP6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SU8-ta-MtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-925" y="530"/>
+        </scene>
+        <!--动画-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ALRefresher" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +54,7 @@
                                         <rect key="frame" x="116" y="0.0" width="48" height="30"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
-                                            <action selector="didClickCancelBtn" destination="BYZ-38-t0r" eventType="touchUpInside" id="HA6-7S-agl"/>
+                                            <action selector="didClickResetBtn" destination="BYZ-38-t0r" eventType="touchUpInside" id="8j4-Wk-27m"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -50,14 +66,46 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xIg-tl-Vwi" secondAttribute="bottom" constant="100" id="a6V-cX-rwf"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="cancelBtn" destination="HaE-c3-gDb" id="Z2h-vc-T8z"/>
-                        <outlet property="startBtn" destination="rQb-xv-i1G" id="bQg-nC-flp"/>
-                        <outlet property="stopBtn" destination="ScT-gF-eAO" id="wx4-rF-rdD"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="动画" id="lrc-WS-FAN">
+                        <barButtonItem key="rightBarButtonItem" title="下拉刷新界面" id="m6j-xx-Xt7">
+                            <connections>
+                                <segue destination="3WP-45-SfU" kind="show" id="gXJ-72-oyF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-191" y="530"/>
+        </scene>
+        <!--下拉刷新-->
+        <scene sceneID="S6L-Jd-OjD">
+            <objects>
+                <tableViewController id="3WP-45-SfU" customClass="ALRefreshViewController" customModule="ALRefresher" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ohv-pb-pvR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="xxx" id="VPu-LT-nSM">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VPu-LT-nSM" id="gzo-sP-gKz">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3WP-45-SfU" id="bsU-Ai-cYs"/>
+                            <outlet property="delegate" destination="3WP-45-SfU" id="LZh-CZ-N9p"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="下拉刷新" id="0zA-dF-mlw"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jLF-dm-4jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="515" y="529"/>
         </scene>
     </scenes>
 </document>
