@@ -86,6 +86,8 @@ class ALRefreshControl: UIControl {
 				}
 			}
 			resizeSquareInRefresher(point.y)
+		}else if contentOffsetY == 0{
+			refresher.reset()
 		}
 	}
 	
@@ -120,7 +122,7 @@ class ALRefreshControl: UIControl {
 		
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) { () -> Void in
 			if 0 <= index && index < 5{
-				//				print("Index: \(index) --- offset: \(offset)")
+				print("Index: \(index) --- offset: \(offset)")
 				self.refresher.resizeSquaresInGroup(index, toValue: CGSizeMake(offset * scale * 4, offset * scale * 4))
 			}
 		}

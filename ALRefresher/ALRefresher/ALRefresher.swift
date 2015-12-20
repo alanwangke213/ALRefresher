@@ -13,7 +13,7 @@ class ALRefresher: UIView {
 	// 定时器
 	private weak var timer: NSTimer?
 	// 方块宽高
-	private var squareDestWH: CGFloat = 45
+	private var squareDestWH: CGFloat = 30
 	// 最小宽高
 	private var squareOriginWH: CGFloat = 0.25
 	// 方块矩阵一维数组
